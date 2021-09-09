@@ -10,7 +10,7 @@ Traditionally, customers have built proxy server to filter the outbound HTTP dom
 2. Application compatibility  
    As not all application allows users to specify proxy servers for outbound access, those "proxy-unaware" applications were not available in such network.
 
-This sample demonstrates how the  
+This sample demonstrates how the AWS Network Firewall works in particularly HTTP outbound network access filtering. 
 
 ## Solution
 With [AWS Network Firewall](https://aws.amazon.com/network-firewall/?nc1=h_ls&whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc), customers can build managed domain filtering solution **without having any proxy servers**. Network Firewall allows you to filter the outbound traffic from your VPC to unfavorable domains. Addition to the wider bandwidth, it provides application transparent domain filtering, where applications are no longer required to configure any explicit proxy servers.
