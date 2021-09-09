@@ -89,7 +89,7 @@ The test EC2 instance needs to be created in private subnet. However The private
    Clicking `Connect` button, you can jump in to the EC2 instance console from your browser.
 
 
-3. Test it if the HTTP domain filtering is actually blocked.  
+3. Test it if the HTTP domain filtering is actually working.  
    
    Now you have access the test instance. By default, in the `allowed_domains.yml` there is a single line `.amazon.com`. This means "Only the outbound HTTPS traffic toward *.amazon.com can go through". Now let's see if it works as we expected. 
 
@@ -149,7 +149,7 @@ The test EC2 instance needs to be created in private subnet. However The private
 
 # Parameters for each components
 
-Please follow Input and Output following.
+Please follow the Terraform parameters as you need.
 
 ## `main.tf` 
 
@@ -183,11 +183,10 @@ Please follow Input and Output following.
 ### Network Firewall
 [network_firewall_with_nat](./modules/network_firewall_with_nat)
 
-## Solution Specific Resources
+## Learn more about AWS Services in this sample...
 
 ### Firewall Gateway
-Firewall gateway is a gateway that handle the traffic. It's pretty unique so if you want to more dive deep you should check [this blog](https://aws.amazon.com/jp/blogs/aws/aws-network-firewall-new-managed-firewall-service-in-vpc/).
+[AWS Network Firewall](https://aws.amazon.com/jp/blogs/aws/aws-network-firewall-new-managed-firewall-service-in-vpc/).
 
 ### SSM Endpoints
-Why is here? Because it prevent from being disconnected from your EC2 located on private subnet.   
-If you added some domain related to AWS endpoint in `allowed_domains.yml`, what would happened? You would lose your connection to your app because Firewall Gateway would block the traffic too. In order to prevent this situation, SSM endpoints allow your to bypass Network firewall, so you can keep your connection whatever you did wrong. 
+Why is here? Because it prevent from being disconnected from your EC2 located on private subnet. 
