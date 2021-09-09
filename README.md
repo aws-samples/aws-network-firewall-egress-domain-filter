@@ -68,7 +68,7 @@ This solution is build on top of [Terraform](https://www.terraform.io/), so you 
     terraform apply
     ```
 
-## Play with it
+## How to play
 Now you have already deploy the infrastructure stack in your environment. Now it's time to play with it!
 
 The test EC2 instance needs to be created in private subnet. However The private subnet doesn't have any internet facing network, you need to use [AWS Systems Manager (AWS SSM) Session Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html). AWS SSM Session Manager allows you to jump in to the EC2 instance without accessing actual EC2 instance IP address. In order to create test instance please follow the steps below.  
@@ -89,7 +89,7 @@ The test EC2 instance needs to be created in private subnet. However The private
    Clicking `Connect` button, you can jump in to the EC2 instance console from your browser.
 
 
-3. Test it if the HTTP access is actually blocked.  
+3. Test it if the HTTP domain filtering is actually blocked.  
    
    Now you have access the test instance. By default, in the `allowed_domains.yml` there is a single line `.amazon.com`. This means "Only the outbound HTTPS traffic toward *.amazon.com can go through". Now let's see if it works as we expected. 
 
